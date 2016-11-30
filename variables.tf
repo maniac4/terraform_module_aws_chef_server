@@ -10,7 +10,10 @@ variable ami { default = "ami-ca340da9" }
 variable ssh_user { default = "ec2-user" }
 variable ssh_private_key { default = "" }
 variable key_name { default = "ops" }
-variable security_groups { default = "cammy" }
+variable security_groups {
+  type = "list"
+  default = ["[base-security-group]"]
+}
 variable volume_type { default = "gp2" }
 variable volume_size { default = "10" }
 variable chef_server_settings { default = "" }
