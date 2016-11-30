@@ -8,6 +8,7 @@ variable ebs_optimized { default = "true" }
 variable region { default = "ap-southeast-2" }
 variable ami { default = "ami-ca340da9" }
 variable ssh_user { default = "ec2-user" }
+variable ssh_private_key { default = "" }
 variable key_name { default = "ops" }
 variable security_groups { default = "cammy" }
 variable volume_type { default = "gp2" }

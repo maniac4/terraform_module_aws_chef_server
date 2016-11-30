@@ -2,6 +2,7 @@ resource "aws_instance" "chef-server" {
   count = "${var.count}"
   instance_type = "${var.instance_type}"
   availability_zone = "${var.availability_zone}"
+  key_name = "${var.key_name}"
   ami = "${var.ami}"
   tags {
     Name = "${var.org}-${var.env}-${var.service}"
@@ -17,7 +18,7 @@ resource "aws_instance" "chef-server" {
     ]
     connection {
       user = "${var.ssh_user}"
-      private_key = "${var.key_name}"
+      private_key = "${var.ssh_private_key}"
     }
   }
 
@@ -28,7 +29,7 @@ resource "aws_instance" "chef-server" {
     ]
     connection {
       user = "${var.ssh_user}"
-      private_key = "${var.key_name}"
+      private_key = "${var.ssh_private_key}"
     }
   }
 }
