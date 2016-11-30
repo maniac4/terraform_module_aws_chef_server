@@ -1,1 +1,1 @@
-# terraform_module_aws_chef_server
+# terraform_module_aws_ec2_chef_server
