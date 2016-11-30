@@ -6,7 +6,10 @@ variable instance_type { default = "t2.small" }
 variable availability_zone { default = "ap-southeast-2c" }
 variable ebs_optimized { default = "true" }
 variable region { default = "ap-southeast-2" }
-variable base_security_group_id { default = "sg-4b7a9e2c" }
+variable security_groups {
+  type = "list"
+  default = [ "base-security-group" ]
+}
 variable ami { default = "ami-ca340da9" }
 variable ssh_user { default = "ec2-user" }
 variable ssh_private_key { default = "" }
