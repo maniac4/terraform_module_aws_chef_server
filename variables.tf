@@ -14,3 +14,4 @@ variable security_groups { default = "cammy" }
 variable volume_type { default = "gp2" }
 variable volume_size { default = "10" }
 variable chef_server_settings { default = "" }
+variable cammy_dns_zone_id { default = "" }

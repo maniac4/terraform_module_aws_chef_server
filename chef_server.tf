@@ -33,3 +33,11 @@ resource "aws_instance" "chef-server" {
     }
   }
 }
+
+resource "aws_route53_record" "chef-server-record" {
+  zone_id = "${var.cammy_dns_zone_id}"
+  name = "chef.internal.cammy.ec2"
+  type = "CNAME"
+  ttl = "300"
+  records = ["${aws_instance.chef-server.private_ip}"]
+}
