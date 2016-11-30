@@ -2,6 +2,7 @@ resource "aws_instance" "chef-server" {
   count = "${var.count}"
   instance_type = "${var.instance_type}"
   availability_zone = "${var.availability_zone}"
+  security_groups = "${var.security_groups}"
   key_name = "${var.key_name}"
   ami = "${var.ami}"
   tags {
